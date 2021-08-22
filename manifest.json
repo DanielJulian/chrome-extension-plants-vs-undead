@@ -6,6 +6,14 @@
   "background": {
     "service_worker": "background.js"
   },
+  "content_scripts": [{
+	"js": ["contentscript.js"],
+	"matches": ["*://*.plantvsundead.com/*"]
+  }],
+  "web_accessible_resources": [{
+	  "resources": ["network-sniffer.js"],
+	  "matches": ["*://*.plantvsundead.com/*"]
+  }],
   "permissions": ["storage", "activeTab", "scripting"],
   "action": {
     "default_popup": "popup.html",
